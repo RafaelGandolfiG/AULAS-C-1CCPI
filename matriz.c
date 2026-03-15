@@ -32,6 +32,7 @@ int main() {
     }
 
     printf("%d",soma);
-    
+    printf("oi");
+
     return 0;
 }
