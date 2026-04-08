@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int numero;
+    int numero=1;
     int soma=0;
     while (numero!=0){
         printf("Digite um numero: ");
