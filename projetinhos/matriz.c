@@ -8,30 +8,30 @@ int main() {
     int soma;
     int k;
 
-    k=0;
-    soma=0;
-    linha=3;
-    coluna=3;
-    tamanho=0;
+    k = 0;
+    soma = 0;
+    linha = 3;
+    coluna = 3;
+    tamanho = 0;
 
-    for (int i=1;i<10;i++){
-        printf("Digite o numero %d: ",i);
-        scanf("%d",&lista[tamanho]);
+    for (int i = 1; i < 10; i++) {
+        printf("Digite o numero %d: ", i);
+        scanf("%d", &lista[tamanho]);
         tamanho++;
     }
 
-    for (int i=0;i<3;i++){
-        for (int j=0; j<3; j++){
-            printf("%d",lista[k]);
-            if (i==j){
-                soma+=lista[k];
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d", lista[k]);
+            if (i == j) {
+                soma += lista[k];
             }
             k++;
         }
         printf("\n");
     }
 
-    printf("%d",soma);
+    printf("%d", soma);
 
     return 0;
 }

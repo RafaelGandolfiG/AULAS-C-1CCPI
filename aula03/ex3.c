@@ -2,11 +2,10 @@
 
 int main() {
     int numero;
-    do{
+    do {
         printf("Digite um numero: ");
-        scanf("%d",&numero);
-    }
-    while (numero<0);
-    printf("%d",numero);
+        scanf("%d", &numero);
+    } while (numero < 0);
+    printf("%d", numero);
     return 0;
 }

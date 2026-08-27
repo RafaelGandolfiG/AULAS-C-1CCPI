@@ -7,16 +7,18 @@ void somar() {
     int soma;
     int c;
     printf("Digite o numero 1: ");
-    if(scanf("%d", &n1) != 1){
+    if (scanf("%d", &n1) != 1) {
         printf("Digite um numero\n");
-        while((c = getchar()) != '\n' && c != EOF); 
+        while ((c = getchar()) != '\n' && c != EOF)
+            ;
         somar();
         return;
     }
     printf("Digite o numero 2: ");
-    if(scanf("%d", &n2) != 1){
+    if (scanf("%d", &n2) != 1) {
         printf("Digite um numero\n");
-        while((c = getchar()) != '\n' && c != EOF); 
+        while ((c = getchar()) != '\n' && c != EOF)
+            ;
         somar();
         return;
     }
@@ -28,16 +30,16 @@ int main() {
     char senhaCorreta[20];
     char senha[20];
     printf("Crie uma senha: ");
-    scanf("%s",&senhaCorreta);
-    while (1){
+    scanf("%s", &senhaCorreta);
+    while (1) {
         printf("Digite a senha correta: ");
-        scanf("%s",&senha);
-        if (strcmp(senha,senhaCorreta)==0){
+        scanf("%s", &senha);
+        if (strcmp(senha, senhaCorreta) == 0) {
             printf("Entrando...\n");
             somar();
             break;
         }
-        else{
+        else {
             printf("Senha incorreta\n");
         }
     }

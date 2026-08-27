@@ -60,10 +60,10 @@ int main() {
         float exame;
         do {
             printf("Digite a nota do exame: ");
-            scanf("%f",&exame);
-        } while(exame>10 || exame<0);
+            scanf("%f", &exame);
+        } while( exame >10 || exame<0);
         bool nota=calcular(media, exame);
-        if(nota){
+        if (nota) {
             aluno[0].aprovado=true;
         }
     }else {

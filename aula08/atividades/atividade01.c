@@ -5,16 +5,15 @@ typedef struct {
     int id;
     char nome[50];
     float preco;
-}Produto;
-
+} Produto;
 
 int main() {
     Produto produtos[4];
 
-    produtos[0].id=123;
-    strcpy(produtos[0].nome,"manteiga");
-    produtos[0].preco=15;
-    
+    produtos[0].id = 123;
+    strcpy(produtos[0].nome, "manteiga");
+    produtos[0].preco = 15;
+
     /*
         int tamanho=sizeof(produtos)/sizeof(produtos[0]);
 
@@ -35,7 +34,7 @@ int main() {
 
     printf("produtos cadastrados\n");
     printf("nome do produto | ID | Preco\n");
-    printf("%s | %d | R$ %.2f\n",produtos[0].nome,produtos[0].id, produtos[0].preco);
+    printf("%s | %d | R$ %.2f\n", produtos[0].nome, produtos[0].id, produtos[0].preco);
 
     return 0;
 }
