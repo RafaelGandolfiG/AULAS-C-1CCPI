@@ -180,6 +180,39 @@ No *buscar(No *inicio, int valor)
 }
 
 /* =========================================================
+   BUSCAR UM VALOR
+   Melhor caso: O(1)
+   Pior caso: O(n)
+   ========================================================= */
+
+No *buscar_equipamento(No *inicio, char nome_equipamento[20])
+{
+
+    No *atual = inicio;
+
+    while (atual != NULL)
+    {
+
+        if (strcmp(atual->equipamento, nome_equipamento) == 0)
+        {
+
+            /*
+                Retorna o endereço
+                do nó encontrado.
+            */
+            return atual;
+        }
+
+        atual = atual->proximo;
+    }
+
+    /*
+        Não encontrou.
+    */
+    return NULL;
+}
+
+/* =========================================================
    REMOVER O PRIMEIRO NÓ
    Complexidade: O(1)
    ========================================================= */
@@ -399,10 +432,11 @@ int main(void)
         printf("2 - Inserir Equipamento no fim da lista\n");
         printf("3 - Mostrar lista de equipamentos\n");
         printf("4 - Buscar valor de consumo\n");
-        printf("5 - Remover primeiro equipamento\n");
-        printf("6 - Remover valor de consumo\n");
-        printf("7 - Contar equipamentos registrados\n");
-        printf("8 - Somar valores de consumo dos equipamentos\n");
+        printf("5 - Buscar por nome de equipamento\n");
+        printf("6 - Remover primeiro equipamento\n");
+        printf("7 - Remover valor de consumo\n");
+        printf("8 - Contar equipamentos registrados\n");
+        printf("9 - Somar valores de consumo dos equipamentos\n");
         printf("0 - Sair\n");
 
         printf("\nEscolha: ");
@@ -482,10 +516,39 @@ int main(void)
 
             break;
         }
+            /* -------------------------- */
+        case 5:
+        {
+
+            printf("Insira o nome do equipamento: ");
+            scanf("%s", nome_equipamento);
+            // fgets(nome_equipamento, 20, stdin);
+
+            No *resultado =
+                buscar_equipamento(
+                    inicio,
+                    nome_equipamento);
+
+            if (resultado != NULL)
+            {
+
+                printf(
+                    "Equipamento encontrado! Nome: %s.\n",
+                    resultado->equipamento);
+            }
+            else
+            {
+
+                printf(
+                    "Equipamento nao encontrado.\n");
+            }
+
+            break;
+        }
 
             /* -------------------------- */
 
-        case 5:
+        case 6:
 
             inicio =
                 removerInicio(inicio);
@@ -494,7 +557,7 @@ int main(void)
 
             /* -------------------------- */
 
-        case 6:
+        case 7:
 
             printf("Valor para remover: ");
             scanf("%d", &valor);
@@ -508,7 +571,7 @@ int main(void)
 
             /* -------------------------- */
 
-        case 7:
+        case 8:
 
             printf(
                 "Quantidade de elementos: %d\n",
@@ -518,7 +581,7 @@ int main(void)
 
             /* -------------------------- */
 
-        case 8:
+        case 9:
 
             printf(
                 "Soma dos valores: %d\n",
